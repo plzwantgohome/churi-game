@@ -199,25 +199,11 @@ div.stButton > button:active {
 
 st.markdown("""
 <div class="title-wrap">
-
-    <div class="case-number">
-        CASE FILE 01
-    </div>
-
-    <div class="main-title">
-        시험 자료 유출 사건
-    </div>
-
-    <div class="red-line"></div>
-
-    <div class="subtitle">
-        삭제된 파일과 다섯 명의 용의자
-    </div>
-
-    <div class="description">
-        진술과 기록 속 모순을 찾아 사건의 진실을 밝혀내라.
-    </div>
-
+<div class="case-number">CASE FILE 01</div>
+<div class="main-title">시험 자료 유출 사건</div>
+<div class="red-line"></div>
+<div class="subtitle">삭제된 파일과 다섯 명의 용의자</div>
+<div class="description">진술과 기록 속 모순을 찾아 사건의 진실을 밝혀내라.</div>
 </div>
 """, unsafe_allow_html=True)
 
