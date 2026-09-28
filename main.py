@@ -101,7 +101,7 @@ header {
    ========================= */
 
 .case-file {
-    width: fit-content;
+    width: 530px;
     max-width: 90%;
     margin: 55px auto 35px auto;
 
