@@ -219,8 +219,6 @@ st.markdown("""
 
 <strong>용의자</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5명<br><br>
 
-<strong>현재 상태</strong> &nbsp;&nbsp; 조사 진행 전
-
 </div>
 """, unsafe_allow_html=True)
 
