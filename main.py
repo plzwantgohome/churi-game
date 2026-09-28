@@ -105,7 +105,7 @@ header {
     max-width: 90%;
     margin: 55px auto 35px auto;
 
-    padding: 18px 25px;
+    padding: 15px 24px;
 
     background: rgba(20, 20, 20, 0.75);
 
