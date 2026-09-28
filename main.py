@@ -215,11 +215,16 @@ st.markdown("""
 st.markdown("""
 <div class="case-file">
 
-<strong>사건 분류</strong> &nbsp;&nbsp; 교내 시험 자료 유출 의혹<br><br>
+    <strong>사건 분류</strong>
+    &nbsp;&nbsp; 교내 시험 자료 유출 의혹
 
-<strong>용의자</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5명
+    <br><br>
+
+    <strong>용의자</strong>
+    &nbsp;&nbsp; 5명
 
 </div>
+
 """, unsafe_allow_html=True)
 
 
