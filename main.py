@@ -593,27 +593,19 @@ elif st.session_state["page"] == "prologue":
 
     if step == 0:
 
-        st.markdown(
-            dedent("""
-                <div class="prologue-wrap">
-                    <div class="scene-dark">
+        st.html("""
+<div class="prologue-wrap">
+    <div class="scene-dark">
+        <div class="scene-small">PROLOGUE</div>
 
-                        <div class="scene-small">
-                            PROLOGUE
-                        </div>
-
-                        <div class="scene-text">
-                            중간고사를 하루 앞둔 밤.<br><br>
-
-                            늦은 시간까지 불이 켜져 있던 학교도<br>
-                            어느새 조용해져 있었다.
-                        </div>
-
-                    </div>
-                </div>
-            """),
-            unsafe_allow_html=True
-        )
+        <div class="scene-text">
+            중간고사를 하루 앞둔 밤.<br><br>
+            늦은 시간까지 불이 켜져 있던 학교도<br>
+            어느새 조용해져 있었다.
+        </div>
+    </div>
+</div>
+""")
 
         if st.button(
             "다음  ▶",
@@ -631,58 +623,44 @@ elif st.session_state["page"] == "prologue":
 
     elif step == 1:
 
-        st.markdown(
-            dedent("""
-                <div class="prologue-wrap">
+        st.html("""
+<div class="prologue-wrap">
+    <div class="phone-area">
+        <div>
+            <div class="scene-time" style="text-align:center;">
+                00:17
+            </div>
 
-                    <div class="phone-area">
+            <div class="phone">
+                <div class="phone-header">
+                    <span>학교 익명 게시판</span>
+                    <span>00:17</span>
+                </div>
 
-                        <div>
+                <div class="post-title">
+                    내일 시험, 미리 보고 싶은 사람?
+                </div>
 
-                            <div class="scene-time"
-                                 style="text-align:center;">
-                                00:17
-                            </div>
+                <div class="post-meta">
+                    익명 · 방금 전
+                </div>
 
-                            <div class="phone">
-
-                                <div class="phone-header">
-                                    <span>학교 익명 게시판</span>
-                                    <span>00:17</span>
-                                </div>
-
-                                <div class="post-title">
-                                    내일 시험, 미리 보고 싶은 사람?
-                                </div>
-
-                                <div class="post-meta">
-                                    익명 · 방금 전
-                                </div>
-
-                                <div class="exam-photo">
-
-                                    <div class="exam-head">
-                                        2학년 중간고사
-                                    </div>
-
-                                    <div class="exam-line"></div>
-                                    <div class="exam-line middle"></div>
-                                    <div class="exam-line"></div>
-                                    <div class="exam-line short"></div>
-                                    <div class="exam-line middle"></div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                <div class="exam-photo">
+                    <div class="exam-head">
+                        2학년 중간고사
                     </div>
 
+                    <div class="exam-line"></div>
+                    <div class="exam-line middle"></div>
+                    <div class="exam-line"></div>
+                    <div class="exam-line short"></div>
+                    <div class="exam-line middle"></div>
                 </div>
-            """),
-            unsafe_allow_html=True
-        )
+            </div>
+        </div>
+    </div>
+</div>
+""")
 
         if st.button(
             "게시물을 확인한다  ▶",
@@ -700,59 +678,52 @@ elif st.session_state["page"] == "prologue":
 
     elif step == 2:
 
-        st.markdown(
-            dedent("""
-                <div class="prologue-wrap">
+        st.html("""
+<div class="prologue-wrap">
+    <div class="phone-area">
+        <div class="phone">
 
-                    <div class="phone-area">
+            <div class="phone-header">
+                <span>학교 익명 게시판</span>
+                <span>00:19</span>
+            </div>
 
-                        <div class="phone">
+            <div class="post-title">
+                내일 시험, 미리 보고 싶은 사람?
+            </div>
 
-                            <div class="phone-header">
-                                <span>학교 익명 게시판</span>
-                                <span>00:19</span>
-                            </div>
+            <div class="comment">
+                익명1
+                <span class="comment-time">00:18</span>
+                <br>
+                이거 진짜야?
+            </div>
 
-                            <div class="post-title">
-                                내일 시험, 미리 보고 싶은 사람?
-                            </div>
+            <div class="comment">
+                익명2
+                <span class="comment-time">00:18</span>
+                <br>
+                잠깐만 이거 내일 시험 아니야?
+            </div>
 
-                            <div class="comment">
-                                익명1
-                                <span class="comment-time">00:18</span>
-                                <br>
-                                이거 진짜야?
-                            </div>
+            <div class="comment">
+                익명3
+                <span class="comment-time">00:19</span>
+                <br>
+                누가 이런 걸 올림?
+            </div>
 
-                            <div class="comment">
-                                익명2
-                                <span class="comment-time">00:18</span>
-                                <br>
-                                잠깐만 이거 내일 시험 아니야?
-                            </div>
+            <div class="comment">
+                익명4
+                <span class="comment-time">00:19</span>
+                <br>
+                일단 저장함
+            </div>
 
-                            <div class="comment">
-                                익명3
-                                <span class="comment-time">00:19</span>
-                                <br>
-                                누가 이런 걸 올림?
-                            </div>
-
-                            <div class="comment">
-                                익명4
-                                <span class="comment-time">00:19</span>
-                                <br>
-                                일단 저장함
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            """),
-            unsafe_allow_html=True
-        )
+        </div>
+    </div>
+</div>
+""")
 
         if st.button(
             "다음  ▶",
@@ -770,40 +741,31 @@ elif st.session_state["page"] == "prologue":
 
     elif step == 3:
 
-        st.markdown(
-            dedent("""
-                <div class="prologue-wrap">
+        st.html("""
+<div class="prologue-wrap">
+    <div class="phone-area">
+        <div>
 
-                    <div class="phone-area">
+            <div class="scene-time" style="text-align:center;">
+                00:20
+            </div>
 
-                        <div>
+            <div class="phone">
 
-                            <div class="scene-time"
-                                 style="text-align:center;">
-                                00:20
-                            </div>
-
-                            <div class="phone">
-
-                                <div class="phone-header">
-                                    <span>학교 익명 게시판</span>
-                                    <span>00:20</span>
-                                </div>
-
-                                <div class="deleted">
-                                    삭제된 게시물입니다.
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                <div class="phone-header">
+                    <span>학교 익명 게시판</span>
+                    <span>00:20</span>
                 </div>
-            """),
-            unsafe_allow_html=True
-        )
+
+                <div class="deleted">
+                    삭제된 게시물입니다.
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+""")
 
         if st.button(
             "다음 날  ▶",
@@ -821,36 +783,27 @@ elif st.session_state["page"] == "prologue":
 
     elif step == 4:
 
-        st.markdown(
-            dedent("""
-                <div class="prologue-wrap">
+        st.html("""
+<div class="prologue-wrap">
+    <div class="school-scene">
 
-                    <div class="school-scene">
+        <div class="dialogue-box">
 
-                        <div class="dialogue-box">
+            <div class="dialogue-name">
+                학생들의 대화
+            </div>
 
-                            <div class="dialogue-name">
-                                학생들의 대화
-                            </div>
+            <div class="dialogue-text">
+                “야, 어제 게시판에 올라온 거 봤어?”<br><br>
+                “그 사진 진짜 시험 문제래.”<br><br>
+                “그래서 오늘 시험 미뤄진다던데.”
+            </div>
 
-                            <div class="dialogue-text">
+        </div>
 
-                                “야, 어제 게시판에 올라온 거 봤어?”<br><br>
-
-                                “그 사진 진짜 시험 문제래.”<br><br>
-
-                                “그래서 오늘 시험 미뤄진다던데.”
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            """),
-            unsafe_allow_html=True
-        )
+    </div>
+</div>
+""")
 
         if st.button(
             "계속 듣는다  ▶",
@@ -868,33 +821,26 @@ elif st.session_state["page"] == "prologue":
 
     elif step == 5:
 
-        st.markdown(
-            dedent("""
-                <div class="prologue-wrap">
+        st.html("""
+<div class="prologue-wrap">
+    <div class="scene-dark">
 
-                    <div class="scene-dark">
+        <div class="scene-text">
+            사진에 찍힌 것은<br>
+            실제 시험에 사용될 예정이었던 원본이었다.<br><br>
 
-                        <div class="scene-text">
+            하지만 교무실의 문에는<br>
+            침입한 흔적이 없었다.<br><br>
 
-                            사진에 찍힌 것은<br>
-                            실제 시험에 사용될 예정이었던 원본이었다.<br><br>
+            시험지를 보관한 서랍도 잠겨 있었다.<br><br>
 
-                            하지만 교무실의 문에는<br>
-                            침입한 흔적이 없었다.<br><br>
+            컴퓨터에서도<br>
+            수상한 접근 기록은 발견되지 않았다.
+        </div>
 
-                            시험지를 보관한 서랍도 잠겨 있었다.<br><br>
-
-                            컴퓨터에서도<br>
-                            수상한 접근 기록은 발견되지 않았다.
-
-                        </div>
-
-                    </div>
-
-                </div>
-            """),
-            unsafe_allow_html=True
-        )
+    </div>
+</div>
+""")
 
         if st.button(
             "사건을 확인한다  ▶",
@@ -907,36 +853,31 @@ elif st.session_state["page"] == "prologue":
 
     # =====================================================
     # SCENE 7
-    # 사건 시작
+    # CASE START
     # =====================================================
 
     elif step == 6:
 
-        st.markdown(
-            dedent("""
-                <div class="prologue-wrap">
+        st.html("""
+<div class="prologue-wrap">
+    <div class="case-screen">
 
-                    <div class="case-screen">
+        <div class="case-start-number">
+            CASE 00:17
+        </div>
 
-                        <div class="case-start-number">
-                            CASE 00:17
-                        </div>
+        <div class="case-start-title">
+            유출된 시험지
+        </div>
 
-                        <div class="case-start-title">
-                            유출된 시험지
-                        </div>
+        <div class="case-start-description">
+            다섯 명의 증언과 기록 속에서<br>
+            사건의 진실을 찾아내십시오.
+        </div>
 
-                        <div class="case-start-description">
-                            다섯 명의 증언과 기록 속에서<br>
-                            사건의 진실을 찾아내십시오.
-                        </div>
-
-                    </div>
-
-                </div>
-            """),
-            unsafe_allow_html=True
-        )
+    </div>
+</div>
+""")
 
         if st.button(
             "CHAPTER 1 시작",
@@ -945,29 +886,3 @@ elif st.session_state["page"] == "prologue":
         ):
             st.session_state["page"] = "chapter1"
             st.rerun()
-
-
-
-# =========================================================
-# CHAPTER 1
-# 아직 제작 전
-# =========================================================
-
-elif st.session_state["page"] == "chapter1":
-
-    st.markdown(
-        dedent("""
-            <div class="scene-dark">
-
-                <div class="scene-small">
-                    CHAPTER 1
-                </div>
-
-                <div class="scene-text">
-                    다섯 명
-                </div>
-
-            </div>
-        """),
-        unsafe_allow_html=True
-    )
