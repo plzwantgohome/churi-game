@@ -89,3 +89,142 @@ def show_chapter1():
             st.session_state.chapter1_step = 0
             st.rerun()
 
+    # 스토리 출력
+    step = st.session_state.chapter1_step
+
+    if step < len(story):
+
+        with st.container(border=True):
+            st.markdown(story[step])
+
+        if step == 4:
+            button_text = "의뢰를 수락한다"
+
+        elif step == len(story) - 1:
+            button_text = "서류철 열어보기"
+
+        else:
+            button_text = "다음 →"
+
+        if st.button(button_text, use_container_width=True):
+            st.session_state.chapter1_step += 1
+            st.rerun()
+
+    # 사건 기록 확인
+    elif step == len(story):
+
+        st.subheader("시험 자료 유출 사건 기록")
+
+        st.write(
+            "교장에게 전달받은 서류철에는 "
+            "사건과 관련된 자료가 정리되어 있었다."
+        )
+
+        st.write("나는 하나씩 내용을 확인하기 시작했다.")
+
+        record = st.radio(
+            "확인할 기록을 선택하세요.",
+            ["사건 개요", "제보 내용", "관련 학생"]
+        )
+
+        with st.container(border=True):
+
+            if record == "사건 개요":
+
+                st.subheader("사건 개요")
+
+                st.markdown("""
+                **사건명:** 시험 자료 유출 의혹 사건
+
+                **발생 장소:** 둔산여자고등학교
+
+                **사건 내용:**
+
+                최근 실시된 시험에서 일부 학생들이
+                시험 문제를 사전에 알고 있었다는
+                의혹이 제기되었다.
+
+                학교 측은 시험 자료가 외부로
+                유출되었을 가능성을 조사하고 있다.
+
+                **현재 상황:**
+
+                유출 여부와 경로는 아직 확인되지 않았다.
+                """)
+
+            elif record == "제보 내용":
+
+                st.subheader("제보 내용")
+
+                st.markdown("""
+                **제보 접수:** 시험 종료 이후
+
+                **제보 내용:**
+
+                일부 학생들이 시험 전에
+                출제된 문제의 내용을 알고 있었다는
+                제보가 학교 측에 접수되었다.
+
+                학교에서는 단순히 예상 문제가
+                적중했을 가능성도 검토했으나,
+                다른 정황도 확인할 필요가 있다고 판단했다.
+
+                **추가 확인 사항:**
+
+                실제 시험 자료에 접근한 사람이 있는지,
+                학생들에게 문제가 어떻게 알려졌는지
+                조사해야 한다.
+                """)
+
+            elif record == "관련 학생":
+
+                st.subheader("관련 학생 명단")
+
+                st.write(
+                    "학교 측에서 우선적으로 "
+                    "면담이 필요하다고 정리한 학생들이다."
+                )
+
+                st.markdown("""
+                - 지현
+                - 혜린
+                - 예주
+                - 유주
+                - 다인
+                """)
+
+                st.warning(
+                    "현재까지 이 학생들이 사건에 "
+                    "가담했다는 사실이 확인된 것은 아니다."
+                )
+
+        if st.button("기록 확인을 마친다", use_container_width=True):
+            st.session_state.chapter1_step += 1
+            st.rerun()
+
+    # 기록 확인 이후
+    else:
+
+        with st.container(border=True):
+
+            st.markdown("""
+            나는 서류철을 덮고 잠시 생각에 잠겼다.
+
+            아직 확인되지 않은 사실이 너무 많았다.
+
+            우선 사건과 관련된 학생들을 직접 만나
+            이야기를 들어 볼 필요가 있었다.
+
+            **나** : "교장 선생님, 이 학생들과
+            직접 이야기를 나눌 수 있을까요?"
+
+            **교장** : "물론입니다.
+            조사에 필요한 협조는 최대한 제공하겠습니다."
+
+            나는 수첩을 챙기고 자리에서 일어났다.
+
+            이제 본격적인 조사를 시작할 시간이었다.
+            """)
+
+        st.caption("다음 장면 : 학생 조사")
+
