@@ -50,8 +50,6 @@ def show_chapter2():
     # SCENE 01 진행
     if line < len(scene1):
 
-        st.caption("SCENE 01 · 면담실")
-
         for i in range(line + 1):
             st.markdown(scene1[i])
 
@@ -67,8 +65,6 @@ def show_chapter2():
 
     # SCENE 02 진행
     else:
-
-        st.caption("SCENE 02 · 첫 번째 면담")
 
         scene2_line = line - len(scene1)
 
