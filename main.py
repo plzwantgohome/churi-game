@@ -2,6 +2,7 @@ import streamlit as st
 from textwrap import dedent
 from chapters.chapter1 import show_chapter1
 from chapters.chapter2 import show_chapter2
+from chapters.chapter3 import show_chapter3
 
 # =========================
 # 페이지 설정
@@ -894,3 +895,5 @@ elif st.session_state["page"] == "chapter1":
     show_chapter1()
 elif st.session_state["page"] == "chapter2":
     show_chapter2()
+elif st.session_state["page"] == "chapter3":
+    show_chapter3()
