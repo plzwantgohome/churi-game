@@ -1,3 +1,4 @@
+
 import streamlit as st
 from dialogue import choose_dialogue
 from ui import show_dialogue
@@ -204,13 +205,13 @@ def show_timeline():
             "기록 목록으로 돌아가 다시 열람할 수 있다."
         )
 
-    if st.button(
-        "출력 기록 다시 보기",
-        key="chapter5_back_to_records",
-        use_container_width=True
-    ):
-        st.session_state["chapter5_phase"] = "records"
-        st.rerun()
+        if st.button(
+            "출력 기록 다시 보기",
+            key="chapter5_back_to_records",
+            use_container_width=True
+        ):
+            st.session_state["chapter5_phase"] = "records"
+            st.rerun()
 
 
 def show_chapter5():
@@ -235,7 +236,7 @@ def show_chapter5():
             INTRO_LINES,
             "chapter5_intro_line",
             "공용 인쇄실",
-            skip_target="finished"
+            skip_target="records"
         ):
             st.session_state["chapter5_phase"] = "records"
             st.rerun()
@@ -301,4 +302,4 @@ def show_chapter5():
         use_container_width=True
     ):
         st.session_state["page"] = "chapter6"
-        st.rerun()
+        st.rerun() 
