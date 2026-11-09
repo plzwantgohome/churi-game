@@ -1,5 +1,42 @@
 
 import streamlit as st
+import io
+import math
+import struct
+import wave
+
+
+@st.cache_data
+def make_phone_ring():
+    """전화벨 소리를 코드로 생성한다."""
+    sample_rate = 16000
+    duration = 1.8
+    samples = bytearray()
+
+    for i in range(int(sample_rate * duration)):
+        t = i / sample_rate
+        position = t % 0.9
+
+        if position < 0.6:
+            fade = min(1, position / 0.02, (0.6 - position) / 0.02)
+            sound = 0.12 * fade * (
+                math.sin(2 * math.pi * 440 * t)
+                + math.sin(2 * math.pi * 480 * t)
+            )
+        else:
+            sound = 0
+
+        samples.extend(struct.pack("<h", int(sound * 32767)))
+
+    buffer = io.BytesIO()
+
+    with wave.open(buffer, "wb") as audio:
+        audio.setnchannels(1)
+        audio.setsampwidth(2)
+        audio.setframerate(sample_rate)
+        audio.writeframes(samples)
+
+    return buffer.getvalue()
 from ui import show_dialogue
 
 
@@ -97,7 +134,6 @@ def show_chapter1():
 
         location, speaker, words = story[step]
 
-
         show_dialogue(
             "CHAPTER 01",
             "낯선 의뢰",
@@ -110,6 +146,13 @@ def show_chapter1():
             }
         )
 
+        # 첫 번째 대사에서만 전화벨 재생
+        if step == 0:
+            st.audio(
+                make_phone_ring(),
+                format="audio/wav",
+                autoplay=True
+            )
 
         if words == "나는 잠시 생각에 잠겼다.":
             button_text = "의뢰를 수락한다"
@@ -127,7 +170,6 @@ def show_chapter1():
             st.rerun()
 
         return
-
     # 2. 사건 기록 확인
     if step == len(story):
 
@@ -221,11 +263,15 @@ def show_chapter1():
         return
 
 
-    # 3. 사건 기록 확인 이후
+            # 3. 사건 기록 확인 이후
     ending_step = step - len(story) - 1
 
-    speaker, words = ending[ending_step]
+    # 잘못된 인덱스로 마지막 대사에 접근하지 않도록 확인
+    if not (0 <= ending_step < len(ending)):
+        st.session_state["chapter1_step"] = len(story) + 1
+        st.rerun()
 
+    speaker, words = ending[ending_step]
 
     show_dialogue(
         "CHAPTER 01",
@@ -243,9 +289,7 @@ def show_chapter1():
         }
     )
 
-
     if ending_step < len(ending) - 1:
-
         if st.button(
             "다음 →",
             key="chapter1_ending_next",
@@ -255,7 +299,6 @@ def show_chapter1():
             st.rerun()
 
     else:
-
         st.caption("다음 챕터: 다섯 명의 증언")
 
         if st.button(
