@@ -230,13 +230,13 @@ def show_compare():
             "두 기록이 서로 반대되는 내용을 말하는지 다시 확인하자."
         )
 
-    if st.button(
-        "기록 다시 보기",
-        key="chapter6_back_to_records",
-        use_container_width=True
-    ):
-        st.session_state["chapter6_phase"] = "records"
-        st.rerun()
+        if st.button(
+            "기록 다시 보기",
+            key="chapter6_back_to_records",
+            use_container_width=True
+        ):
+            st.session_state["chapter6_phase"] = "records"
+            st.rerun()
 
 
 def show_chapter6():
@@ -261,7 +261,7 @@ def show_chapter6():
             INTRO_LINES,
             "chapter6_intro_line",
             "학교 본관 · 자료 열람실",
-            skip_target="finished"
+            skip_target="records"
         ):
             st.session_state["chapter6_phase"] = "records"
             st.rerun()
